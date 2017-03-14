@@ -1,0 +1,82 @@
+;Definir la función cuadrado de un número
+
+(defun cuadrado (n) (* n n))
+>(cuadrado 3)
+9
+;----------------------------
+;----------------------------
+
+;Definir funcion cubo de exponente cúbico			   
+
+(defun cubico (n) (expt n 3))
+> (cubico 5) 
+125          
+
+;----------------------------
+;----------------------------
+
+;definicion de la funcion suma
+(defun suma (a b) (+ a b))
+> (suma 2 3)
+5           
+
+;----------------------------
+;----------------------------
+
+;definir una funcion que resuelva el polinomio ax2+bx+c
+(defun polinomio (a b c x) (+ (* a x x) (* b x) c))
+> (polinomio 1 2 3 4) 
+27                    
+
+;----------------------------
+;----------------------------
+
+;definir funcion 'cuadradoMedia' que devuelva el cuadrado de la media entre a y b
+(defun cuadradoMedia (a b) (cuadrado (/ (+ a b) 2)))
+> (cuadradomedia 2 4)
+9    
+
+;----------------------------
+;----------------------------    
+
+;definir la funcion mediacuadrado que devuelve la media de los cuadrados de a y b
+(defun mediaCuadrado (a b) (media (cuadrado a) (cuadrado b)))                                                 
+> (mediacuadrado 2 4)                                          
+10                                                                       
+
+;----------------------------
+;----------------------------    
+
+;definir la función absoluto mediante condicional 'cond'
+(defun absolut (a) (cond ((> a 0) a)
+			   (t (-a)) ))
+
+
+;----------------------------
+;---------------------------- 
+
+;definir la funcion (nota numero) y visualice la nota correspondiente:
+ n<5 'SUSPENSO, n<7 y n>=5 'APROBADO
+ n>=7 y n< 9 'NOTABLE y n>=9 0 n<=10 'SOBRESALIENTE
+si n>10  'ERROR
+
+(defun nota (n) (cond ((< n 5) 'SUSPENSO)
+		      ((< n 7) 'APROBADO)
+		      ((< n 9) 'NOTABLE)
+		      ((<= n 10) 'SOBRESALIENTE)
+		      (t 'ERROR)))
+
+;----------------------------
+;---------------------------- 
+
+;definir la funcion 'potencia n1 n2' :
+;:Si n1=n2=0 -> devolver el valor indeterminado.
+;-Si n1=0, n2!=0 -> devolver 0.
+;-Si n1!=0, n2=0 -> devolver 1.
+
+(defun potencia (n1 n2)   (cond                 
+                                ((and (= n1 0) (= n2 0)) 'indeterminado)
+                                ((= n1 0) 0)                            
+                                ((= n2 0) 1)                            
+                                (t (* n1 (potencia n1 (- n2 1)))))) 
+
